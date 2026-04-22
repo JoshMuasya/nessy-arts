@@ -238,7 +238,7 @@ export default function OrderStepperForm() {
                 <p className="text-center text-sm text-muted-foreground mt-6">
                     Prefer quick ordering?{" "}
                     <a
-                        href="https://wa.me/1234567890"
+                        href="https://wa.me/254797543654"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary font-medium hover:underline"
