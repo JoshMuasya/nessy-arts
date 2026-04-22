@@ -1,8 +1,11 @@
 import Order from "@/components/Order/Order";
+import { Suspense } from "react";
 
 const OrderPage = () => {
     return (
-        <Order />
+        <Suspense fallback={<div>Loading...</div>}>
+            <Order />
+        </Suspense>
     );
 };
 
