@@ -1,11 +1,32 @@
 "use client"
 
 import Link from "next/link"
-import AnimatedSection from "../Home/AnimatedSection"
 import { Check } from "lucide-react"
 import SectionHeading from "../Home/SectionHeading"
-import { pricingPlans } from "@/lib/data"
 import BorderGlow from "../BorderGlow"
+import AnimatedSection from "../Home/AnimatedSection"
+
+const pricingPlans = [
+    { size: "A4", dimensions: "210 × 297 mm", price: 50, description: "Perfect for detailed portraits" },
+    {
+        size: "A3",
+        dimensions: "297 × 420 mm",
+        price: 80,
+        description: "Ideal for larger subjects or multiple subjects",
+    },
+    {
+        size: "A2",
+        dimensions: "420 × 594 mm",
+        price: 120,
+        description: "For grand statement pieces",
+    },
+    {
+        size: "A1",
+        dimensions: "594 × 841 mm",
+        price: 180,
+        description: "For the ultimate artistic impact",
+    },
+];
 
 const Pricing = () => {
     return (

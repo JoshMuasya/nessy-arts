@@ -3,7 +3,6 @@
 import { Loader2, Pencil, Plus, Trash2, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { z } from "zod";
 
 export type Testimonial = {
     id: string;
