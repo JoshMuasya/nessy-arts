@@ -3,15 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion"
 import SectionHeading from "../Home/SectionHeading"
 import { useEffect, useState } from "react"
-import { GalleryItem, getGalleryItems } from "@/lib/data"
 import Masonry from "../Masonry"
 import { toast } from "sonner"
 
-const categories = ["all", "pencil", "charcoal", "couple", "pets"] as const;
-
 const Gallery = () => {
     const [filter, setFilter] = useState<string>("all");
-    const [selected, setSelected] = useState<GalleryItem | null>(null);
     const [gallery, setGallery] = useState<string[]>([])
     const [loading, setLoading] = useState(true);
 

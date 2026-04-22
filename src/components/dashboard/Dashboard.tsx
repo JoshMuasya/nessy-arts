@@ -1,11 +1,49 @@
 "use client";
 
-import { getGalleryItems, getTestimonials } from "@/lib/data";
 import { Image, MessageSquare, Upload } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
-    const gallery = getGalleryItems();
-    const testimonials = getTestimonials();
+    const [gallery, setGallery] = useState<any[]>([]);
+    const [testimonials, setTestimonials] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchGallery = async () => {
+            try {
+                setLoading(true);
+
+                const res = await fetch("/api/gallery");
+                if (!res.ok) throw new Error();
+
+                const data = await res.json();
+                setGallery(data.result.data);
+            } catch (error) {
+                setGallery([]);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        const fetchTestimonials = async () => {
+            try {
+                setLoading(true);
+
+                const res = await fetch("/api/testimonials");
+                if (!res.ok) throw new Error();
+
+                const data = await res.json();
+                setTestimonials(data.result.data);
+            } catch (error) {
+                setTestimonials([]);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchGallery();
+        fetchTestimonials();
+    }, []);
 
     const cards = [
         {

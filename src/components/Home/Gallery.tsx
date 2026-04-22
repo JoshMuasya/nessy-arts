@@ -1,9 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import AnimatedSection from "./AnimatedSection"
 import SectionHeading from "./SectionHeading"
-import { getGalleryItems } from "@/lib/data";
 import BounceCards from "../BounceCards";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
